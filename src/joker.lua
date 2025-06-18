@@ -263,7 +263,7 @@ SMODS.Joker {
 			}
 		end
 	end
-	if context.joker_main then
+	if context.joker_main and #context.full_hand - #context.scoring_hand >= 1 then
 		card.ability.extra.unscored = #context.full_hand - #context.scoring_hand
 			return {
 				chips = card.ability.extra.chips * card.ability.extra.unscored
