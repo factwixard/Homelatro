@@ -169,7 +169,7 @@ SMODS.Sticker {
 	pos = { x = 5, y = 1 },
 	badge_colour = HEX("3D1909"),
 	calculate = function(self, card, context)
-		if context.main_scoring then
+		if context.main_scoring and context.cardarea == G.play then
 			return {
 				balance = true
 			}
