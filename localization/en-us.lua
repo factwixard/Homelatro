@@ -301,7 +301,7 @@
 						'{C:mult}+#1#{} Mult against {C:attention}Boss Blinds{}',
 					},
 					{
-						'{C:green}#3# in #4# chance{} of being destroyed',
+						'{C:green}#2# in #3# chance{} of being destroyed',
 						'at the {C:attention}end of round{}',
 					},
 				},
