@@ -5,13 +5,14 @@ SMODS.Joker {
 	pos = { x = 0, y = 0 },
 	rarity = 'hmlt_player',
 	cost = 4,
-	config = { extra = { chips = 50, size = 3, odds = 4.13 } },
+	config = { extra = { chips = 50, size = 3 } },
 	loc_vars = function(self, info_queue, card)
-		return { vars = { card.ability.extra.chips, card.ability.extra.size, G.GAME.probabilities.normal, card.ability.extra.odds } }
+		local new_numerator, new_denominator = SMODS.get_probability_vars(card, 1, 4.13, 'hmlt_ascend_chance')
+		return { vars = { card.ability.extra.chips, card.ability.extra.size, new_numerator, new_denominator } }
 	end,
 	calculate = function(self, card, context)
 		if context.end_of_round and context.game_over == false and context.main_eval and not context.blueprint then
-			if pseudorandom('hmlt_ectobiologist') < G.GAME.probabilities.normal / card.ability.extra.odds then
+			if SMODS.pseudorandom_probability(card, 'hmlt_ectobiologist', 1, 4.13, 'hmlt_ascend_chance') then
 				G.E_MANAGER:add_event(Event({
 					func = function()
 						play_sound('slice1')
@@ -54,13 +55,14 @@ SMODS.Joker {
 	pos = { x = 1, y = 0 },
 	rarity = 'hmlt_player',
 	cost = 4,
-	config = { extra = { chips = 50, suits = 3, odds = 4.13 } },
+	config = { extra = { chips = 50, suits = 3 } },
 	loc_vars = function(self, info_queue, card)
-		return { vars = { card.ability.extra.chips, card.ability.extra.suits, G.GAME.probabilities.normal, card.ability.extra.odds } }
+		local new_numerator, new_denominator = SMODS.get_probability_vars(card, 1, 4.13, 'hmlt_ascend_chance')
+		return { vars = { card.ability.extra.chips, card.ability.extra.suits, new_numerator, new_denominator } }
 	end,
 	calculate = function(self, card, context)
 		if context.end_of_round and context.game_over == false and context.main_eval and not context.blueprint then
-			if pseudorandom('hmlt_gardengnostic') < G.GAME.probabilities.normal / card.ability.extra.odds then
+			if SMODS.pseudorandom_probability(card, 'hmlt_gardengnostic', 1, 4.13, 'hmlt_ascend_chance') then
 				G.E_MANAGER:add_event(Event({
 					func = function()
 						play_sound('slice1')
@@ -118,13 +120,14 @@ SMODS.Joker {
 	pos = { x = 2, y = 0 },
 	rarity = 'hmlt_player',
 	cost = 4,
-	config = { extra = { chips = 50, suits = 2, odds = 4.13 } },
+	config = { extra = { chips = 50, suits = 2 } },
 	loc_vars = function(self, info_queue, card)
-		return { vars = { card.ability.extra.chips, card.ability.extra.suits, G.GAME.probabilities.normal, card.ability.extra.odds } }
+		local new_numerator, new_denominator = SMODS.get_probability_vars(card, 1, 4.13, 'hmlt_ascend_chance')
+		return { vars = { card.ability.extra.chips, card.ability.extra.suits, new_numerator, new_denominator } }
 	end,
 	calculate = function(self, card, context)
 		if context.end_of_round and context.game_over == false and context.main_eval and not context.blueprint then
-			if pseudorandom('hmlt_tentacletherapist') < G.GAME.probabilities.normal / card.ability.extra.odds then
+			if SMODS.pseudorandom_probability(card, 'hmlt_tentacletherapist', 1, 4.13, 'hmlt_ascend_chance') then
 				G.E_MANAGER:add_event(Event({
 					func = function()
 						play_sound('slice1')
@@ -182,13 +185,14 @@ SMODS.Joker {
 	pos = { x = 3, y = 0 },
 	rarity = 'hmlt_player',
 	cost = 4,
-	config = { extra = { chips = 50, cards = 4, odds = 4.13 } },
+	config = { extra = { chips = 50, cards = 4 } },
 	loc_vars = function(self, info_queue, card)
-	return { vars = { card.ability.extra.chips, card.ability.extra.cards, G.GAME.probabilities.normal, card.ability.extra.odds } }
+		local new_numerator, new_denominator = SMODS.get_probability_vars(card, 1, 4.13, 'hmlt_ascend_chance')
+		return { vars = { card.ability.extra.chips, card.ability.extra.cards, new_numerator, new_denominator } }
 	end,
 	calculate = function(self, card, context)
 		if context.end_of_round and context.game_over == false and context.main_eval and not context.blueprint then
-			if pseudorandom('hmlt_turntechgodhead') < G.GAME.probabilities.normal / card.ability.extra.odds then
+			if SMODS.pseudorandom_probability(card, 'hmlt_turntechgodhead', 1, 4.13, 'hmlt_ascend_chance') then
 				G.E_MANAGER:add_event(Event({
 					func = function()
 						play_sound('slice1')
@@ -231,13 +235,14 @@ SMODS.Joker {
 	pos = { x = 0, y = 1 },
 	rarity = 'hmlt_player',
 	cost = 4,
-	config = { extra = { chips = 30, odds = 4.13, unscored = 0 } },
+	config = { extra = { chips = 30, unscored = 0 } },
 	loc_vars = function(self, info_queue, card)
-		return { vars = { card.ability.extra.chips, G.GAME.probabilities.normal, card.ability.extra.odds } }
+		local new_numerator, new_denominator = SMODS.get_probability_vars(card, 1, 4.13, 'hmlt_ascend_chance')
+		return { vars = { card.ability.extra.chips, new_numerator, new_denominator } }
 	end,
 	calculate = function(self, card, context)
 		if context.end_of_round and context.game_over == false and context.main_eval and not context.blueprint then
-			if pseudorandom('hmlt_gutsygumshoe') < G.GAME.probabilities.normal / card.ability.extra.odds then
+			if SMODS.pseudorandom_probability(card, 'hmlt_gutsygumshoe', 1, 4.13, 'hmlt_ascend_chance') then
 				G.E_MANAGER:add_event(Event({
 					func = function()
 						play_sound('slice1')
@@ -281,13 +286,14 @@ SMODS.Joker {
 	pos = { x = 1, y = 1 },
 	rarity = 'hmlt_player',
 	cost = 4,
-	config = { extra = { chips = 150, size = 1, odds = 4.13 } },
+	config = { extra = { chips = 150, size = 1 } },
 	loc_vars = function(self, info_queue, card)
-		return { vars = { card.ability.extra.chips, card.ability.extra.size, G.GAME.probabilities.normal, card.ability.extra.odds } }
+		local new_numerator, new_denominator = SMODS.get_probability_vars(card, 1, 4.13, 'hmlt_ascend_chance')
+		return { vars = { card.ability.extra.chips, card.ability.extra.size, new_numerator, new_denominator } }
 	end,
 	calculate = function(self, card, context)
 		if context.end_of_round and context.game_over == false and context.main_eval and not context.blueprint then
-			if pseudorandom('hmlt_golgothasterror') < G.GAME.probabilities.normal / card.ability.extra.odds then
+			if SMODS.pseudorandom_probability(card, 'hmlt_golgothasterror', 1, 4.13, 'hmlt_ascend_chance') then
 				G.E_MANAGER:add_event(Event({
 					func = function()
 						play_sound('slice1')
@@ -330,13 +336,14 @@ SMODS.Joker {
 	pos = { x = 2, y = 1 },
 	rarity = 'hmlt_player',
 	cost = 4,
-	config = { extra = { chips_gain = 20, chips = 0, odds = 4.13 } },
+	config = { extra = { chips_gain = 20, chips = 0 } },
 	loc_vars = function(self, info_queue, card)
-		return { vars = { card.ability.extra.chips_gain, card.ability.extra.chips, G.GAME.probabilities.normal, card.ability.extra.odds } }
+		local new_numerator, new_denominator = SMODS.get_probability_vars(card, 1, 4.13, 'hmlt_ascend_chance')
+		return { vars = { card.ability.extra.chips_gain, card.ability.extra.chips, new_numerator, new_denominator } }
 	end,
 	calculate = function(self, card, context)
 		if context.end_of_round and context.game_over == false and context.main_eval and not context.blueprint then
-			if pseudorandom('hmlt_tipsygnostalgic') < G.GAME.probabilities.normal / card.ability.extra.odds then
+			if SMODS.pseudorandom_probability(card, 'hmlt_tipsygnostalgic', 1, 4.13, 'hmlt_ascend_chance') then
 				G.E_MANAGER:add_event(Event({
 					func = function()
 						play_sound('slice1')
@@ -386,13 +393,14 @@ SMODS.Joker {
 	pos = { x = 3, y = 1 },
 	rarity = 'hmlt_player',
 	cost = 4,
-	config = { extra = { chips = 80, odds = 4.13 } },
+	config = { extra = { chips = 80 } },
 	loc_vars = function(self, info_queue, card)
-		return { vars = { card.ability.extra.chips, G.GAME.probabilities.normal, card.ability.extra.odds } }
+		local new_numerator, new_denominator = SMODS.get_probability_vars(card, 1, 4.13, 'hmlt_ascend_chance')
+		return { vars = { card.ability.extra.chips, new_numerator, new_denominator } }
 	end,
 	calculate = function(self, card, context)
 		if context.end_of_round and context.game_over == false and context.main_eval and not context.blueprint then
-			if pseudorandom('hmlt_timaeustestified') < G.GAME.probabilities.normal / card.ability.extra.odds then
+			if SMODS.pseudorandom_probability(card, 'hmlt_timaeustestified', 1, 4.13, 'hmlt_ascend_chance') then
 				G.E_MANAGER:add_event(Event({
 					func = function()
 						play_sound('slice1')
@@ -442,13 +450,14 @@ SMODS.Joker {
 	pos = { x = 0, y = 2 },
 	rarity = 'hmlt_player',
 	cost = 4,
-	config = { extra = { mult = 8, odds = 4.13 } },
+	config = { extra = { mult = 8 } },
 	loc_vars = function(self, info_queue, card)
-		return { vars = { card.ability.extra.mult, G.GAME.probabilities.normal, card.ability.extra.odds } }
+		local new_numerator, new_denominator = SMODS.get_probability_vars(card, 1, 4.13, 'hmlt_ascend_chance')
+		return { vars = { card.ability.extra.mult, new_numerator, new_denominator } }
 	end,
 	calculate = function(self, card, context)
 		if context.end_of_round and context.game_over == false and context.main_eval and not context.blueprint then
-			if pseudorandom('hmlt_apocalypsearisen') < G.GAME.probabilities.normal / card.ability.extra.odds then
+			if SMODS.pseudorandom_probability(card, 'hmlt_apocalypsearisen', 1, 4.13, 'hmlt_ascend_chance') then
 				G.E_MANAGER:add_event(Event({
 					func = function()
 						play_sound('slice1')
@@ -498,13 +507,14 @@ SMODS.Joker {
 	pos = { x = 1, y = 2 },
 	rarity = 'hmlt_player',
 	cost = 4,
-	config = { extra = { mult = 20, size = 1, odds = 4.13 } },
-loc_vars = function(self, info_queue, card)
-return { vars = { card.ability.extra.mult, card.ability.extra.size, G.GAME.probabilities.normal, card.ability.extra.odds } }
+	config = { extra = { mult = 20, size = 1 } },
+	loc_vars = function(self, info_queue, card)
+		local new_numerator, new_denominator = SMODS.get_probability_vars(card, 1, 4.13, 'hmlt_ascend_chance')
+		return { vars = { card.ability.extra.mult, card.ability.extra.size, new_numerator, new_denominator } }
 	end,
 	calculate = function(self, card, context)
 		if context.end_of_round and context.game_over == false and context.main_eval and not context.blueprint then
-			if pseudorandom('hmlt_adiostoreador') < G.GAME.probabilities.normal / card.ability.extra.odds then
+			if SMODS.pseudorandom_probability(card, 'hmlt_adiostoreador', 1, 4.13, 'hmlt_ascend_chance') then
 				G.E_MANAGER:add_event(Event({
 					func = function()
 						play_sound('slice1')
@@ -547,13 +557,14 @@ SMODS.Joker {
 	pos = { x = 2, y = 2 },
 	rarity = 'hmlt_player',
 	cost = 4,
-	config = { extra = { mult_gain = 2, mult = 0, odds = 4.13 } },
+	config = { extra = { mult_gain = 2, mult = 0 } },
 	loc_vars = function(self, info_queue, card)
-		return { vars = { card.ability.extra.mult_gain, card.ability.extra.mult, G.GAME.probabilities.normal, card.ability.extra.odds } }
+		local new_numerator, new_denominator = SMODS.get_probability_vars(card, 1, 4.13, 'hmlt_ascend_chance')
+		return { vars = { card.ability.extra.mult_gain, card.ability.extra.mult, new_numerator, new_denominator } }
 	end,
 	calculate = function(self, card, context)
 		if context.end_of_round and context.game_over == false and context.main_eval and not context.blueprint then
-			if pseudorandom('hmlt_twinarmageddons') < G.GAME.probabilities.normal / card.ability.extra.odds then
+			if SMODS.pseudorandom_probability(card, 'hmlt_twinarmageddons', 1, 4.13, 'hmlt_ascend_chance') then
 				G.E_MANAGER:add_event(Event({
 					func = function()
 						play_sound('slice1')
@@ -602,13 +613,14 @@ SMODS.Joker {
 	pos = { x = 3, y = 2 },
 	rarity = 'hmlt_player',
 	cost = 4,
-	config = { extra = { mult = 69, odds = 4.13 } },
+	config = { extra = { mult = 69 } },
 	loc_vars = function(self, info_queue, card)
-		return { vars = { card.ability.extra.mult, G.GAME.probabilities.normal, card.ability.extra.odds } }
+		local new_numerator, new_denominator = SMODS.get_probability_vars(card, 1, 4.13, 'hmlt_ascend_chance')
+		return { vars = { card.ability.extra.mult, new_numerator, new_denominator } }
 	end,
 	calculate = function(self, card, context)
 		if context.end_of_round and context.game_over == false and context.main_eval and not context.blueprint then
-			if pseudorandom('hmlt_carcinogeneticist') < G.GAME.probabilities.normal / card.ability.extra.odds then
+			if SMODS.pseudorandom_probability(card, 'hmlt_carcinogeneticist', 1, 4.13, 'hmlt_ascend_chance') then
 				G.E_MANAGER:add_event(Event({
 					func = function()
 						play_sound('slice1')
@@ -660,13 +672,14 @@ SMODS.Joker {
 	pos = { x = 0, y = 3 },
 	rarity = 'hmlt_player',
 	cost = 4,
-	config = { extra = { mult_gain = 8, mult = 0, odds = 4.13 } },
+	config = { extra = { mult_gain = 8, mult = 0 } },
 	loc_vars = function(self, info_queue, card)
-		return { vars = { card.ability.extra.mult_gain, card.ability.extra.mult, G.GAME.probabilities.normal, card.ability.extra.odds } }
+		local new_numerator, new_denominator = SMODS.get_probability_vars(card, 1, 4.13, 'hmlt_ascend_chance')
+		return { vars = { card.ability.extra.mult_gain, card.ability.extra.mult, new_numerator, new_denominator } }
 	end,
 	calculate = function(self, card, context)
 		if context.end_of_round and context.game_over == false and context.main_eval and not context.blueprint then
-			if pseudorandom('hmlt_arseniccatnip') < G.GAME.probabilities.normal / card.ability.extra.odds then
+			if SMODS.pseudorandom_probability(card, 'hmlt_arseniccatnip', 1, 4.13, 'hmlt_ascend_chance') then
 				G.E_MANAGER:add_event(Event({
 					func = function()
 						play_sound('slice1')
@@ -716,13 +729,14 @@ SMODS.Joker {
 	pos = { x = 1, y = 3 },
 	rarity = 'hmlt_player',
 	cost = 4,
-	config = { extra = { mult = 12, odds = 4.13 } },
+	config = { extra = { mult = 12 } },
 	loc_vars = function(self, info_queue, card)
-		return { vars = {card.ability.extra.mult, G.GAME.probabilities.normal, card.ability.extra.odds } }
+		local new_numerator, new_denominator = SMODS.get_probability_vars(card, 1, 4.13, 'hmlt_ascend_chance')
+		return { vars = {card.ability.extra.mult, new_numerator, new_denominator } }
 	end,
 	calculate = function(self, card, context)
 		if context.end_of_round and context.game_over == false and context.main_eval and not context.blueprint then
-			if pseudorandom('hmlt_grimauxiliatrix') < G.GAME.probabilities.normal / card.ability.extra.odds then
+			if SMODS.pseudorandom_probability(card, 'hmlt_grimauxiliatrix', 1, 4.13, 'hmlt_ascend_chance') then
 				G.E_MANAGER:add_event(Event({
 					func = function()
 						play_sound('slice1')
@@ -765,13 +779,14 @@ SMODS.Joker {
 	pos = { x = 2, y = 3 },
 	rarity = 'hmlt_player',
 	cost = 4,
-	config = { extra = { mult_gain = 12, mult = 0, odds = 4.13 } },
+	config = { extra = { mult_gain = 12, mult = 0 } },
 	loc_vars = function(self, info_queue, card)
-		return { vars = { card.ability.extra.mult_gain, card.ability.extra.mult, G.GAME.probabilities.normal, card.ability.extra.odds } }
+		local new_numerator, new_denominator = SMODS.get_probability_vars(card, 1, 4.13, 'hmlt_ascend_chance')
+		return { vars = { card.ability.extra.mult_gain, card.ability.extra.mult, new_numerator, new_denominator } }
 	end,
 	calculate = function(self, card, context)
 		if context.end_of_round and context.game_over == false and context.main_eval and not context.blueprint then
-			if pseudorandom('hmlt_gallowscalibrator') < G.GAME.probabilities.normal / card.ability.extra.odds then
+			if SMODS.pseudorandom_probability(card, 'hmlt_gallowscalibrator', 1, 4.13, 'hmlt_ascend_chance') then
 			G.E_MANAGER:add_event(Event({
 				func = function()
 					play_sound('slice1')
@@ -828,13 +843,14 @@ SMODS.Joker {
 	pos = { x = 3, y = 3 },
 	rarity = 'hmlt_player',
 	cost = 4,
-	config = { extra = { mult_gain = 8, mult = 0, odds = 4.13 } },
+	config = { extra = { mult_gain = 8, mult = 0 } },
 	loc_vars = function(self, info_queue, card)
-		return { vars = { card.ability.extra.mult_gain, card.ability.extra.mult, G.GAME.probabilities.normal, card.ability.extra.odds } }
+		local new_numerator, new_denominator = SMODS.get_probability_vars(card, 1, 4.13, 'hmlt_ascend_chance')
+		return { vars = { card.ability.extra.mult_gain, card.ability.extra.mult, new_numerator, new_denominator } }
 	end,
 	calculate = function(self, card, context)
 		if context.end_of_round and context.game_over == false and context.main_eval and not context.blueprint then
-			if pseudorandom('hmlt_arachnidsgrip') < G.GAME.probabilities.normal / card.ability.extra.odds then
+			if SMODS.pseudorandom_probability(card, 'hmlt_arachnidsgrip', 1, 4.13, 'hmlt_ascend_chance') then
 			G.E_MANAGER:add_event(Event({
 				func = function()
 					play_sound('slice1')
@@ -891,13 +907,14 @@ SMODS.Joker {
 	pos = { x = 0, y = 4 },
 	rarity = 'hmlt_player',
 	cost = 4,
-	config = { extra = { mult = 30, odds = 4.13 } },
+	config = { extra = { mult = 30 } },
 	loc_vars = function(self, info_queue, card)
-		return { vars = { card.ability.extra.mult, G.GAME.probabilities.normal, card.ability.extra.odds } }
+		local new_numerator, new_denominator = SMODS.get_probability_vars(card, 1, 4.13, 'hmlt_ascend_chance')
+		return { vars = { card.ability.extra.mult, new_numerator, new_denominator } }
 	end,
 	calculate = function(self, card, context)
 		if context.end_of_round and context.game_over == false and context.main_eval and not context.blueprint then
-			if pseudorandom('hmlt_centaurstesticle') < G.GAME.probabilities.normal / card.ability.extra.odds then
+			if SMODS.pseudorandom_probability(card, 'hmlt_centaurstesticle', 1, 4.13, 'hmlt_ascend_chance') then
 				G.E_MANAGER:add_event(Event({
 					func = function()
 						play_sound('slice1')
@@ -940,29 +957,30 @@ SMODS.Joker {
 	pos = { x = 1, y = 4 },
 	rarity = 'hmlt_player',
 	cost = 4,
-	config = { extra = { mult = 20, odds = 4.13 } },
+	config = { extra = { mult = 20 } },
 	loc_vars = function(self, info_queue, card)
-		return { vars = { card.ability.extra.mult, G.GAME.probabilities.normal, card.ability.extra.odds } }
+		local new_numerator, new_denominator = SMODS.get_probability_vars(card, 1, 4.13, 'hmlt_ascend_chance')
+		return { vars = { card.ability.extra.mult, new_numerator, new_denominator } }
 	end,
 	calculate = function(self, card, context)
-	if context.end_of_round and context.game_over == false and context.main_eval and not context.blueprint then
-		if pseudorandom('hmlt_terminallycapricious') < G.GAME.probabilities.normal / card.ability.extra.odds then
-			G.E_MANAGER:add_event(Event({
-				func = function()
-					play_sound('slice1')
-					G.E_MANAGER:add_event(Event({
-						trigger = 'after',
-						delay = 0,
-						blockable = false,
-						func = function()
-							card:remove()
-							return true
-						end
-					}))
+		if context.end_of_round and context.game_over == false and context.main_eval and not context.blueprint then
+			if SMODS.pseudorandom_probability(card, 'hmlt_terminallycapricious', 1, 4.13, 'hmlt_ascend_chance') then
+				G.E_MANAGER:add_event(Event({
+					func = function()
+						play_sound('slice1')
+						G.E_MANAGER:add_event(Event({
+							trigger = 'after',
+							delay = 0,
+							blockable = false,
+							func = function()
+								card:remove()
+								return true
+							end
+						}))
 					return true
-				end
-			}))
-			G.GAME.pool_flags.hmlt_terminallycapricious_extinct = true
+					end
+				}))
+				G.GAME.pool_flags.hmlt_terminallycapricious_extinct = true
 				return {
 					message = localize('hmlt_extinct')
 				}
@@ -994,29 +1012,30 @@ SMODS.Joker {
 	pos = { x = 2, y = 4 },
 	rarity = 'hmlt_player',
 	cost = 4,
-	config = { extra = { mult_gain = 8, mult = 0, odds = 4.13 } },
+	config = { extra = { mult_gain = 8, mult = 0 } },
 	loc_vars = function(self, info_queue, card)
-		return { vars = { card.ability.extra.mult_gain, card.ability.extra.mult, G.GAME.probabilities.normal, card.ability.extra.odds } }
+		local new_numerator, new_denominator = SMODS.get_probability_vars(card, 1, 4.13, 'hmlt_ascend_chance')
+		return { vars = { card.ability.extra.mult_gain, card.ability.extra.mult, new_numerator, new_denominator } }
 	end,
 	calculate = function(self, card, context)
-	if context.end_of_round and context.game_over == false and context.main_eval and not context.blueprint then
-		if pseudorandom('hmlt_caligulasaquarium') < G.GAME.probabilities.normal / card.ability.extra.odds then
-			G.E_MANAGER:add_event(Event({
-				func = function()
-					play_sound('slice1')
-					G.E_MANAGER:add_event(Event({
-						trigger = 'after',
-						delay = 0,
-						blockable = false,
-						func = function()
-							card:remove()
-							return true
-						end
-					}))
-					return true
-				end
-			}))
-			G.GAME.pool_flags.hmlt_caligulasaquarium_extinct = true
+		if context.end_of_round and context.game_over == false and context.main_eval and not context.blueprint then
+			if SMODS.pseudorandom_probability(card, 'hmlt_caligulasaquarium', 1, 4.13, 'hmlt_ascend_chance') then
+				G.E_MANAGER:add_event(Event({
+					func = function()
+						play_sound('slice1')
+						G.E_MANAGER:add_event(Event({
+							trigger = 'after',
+							delay = 0,
+							blockable = false,
+							func = function()
+								card:remove()
+								return true
+							end
+						}))
+						return true
+					end
+				}))
+				G.GAME.pool_flags.hmlt_caligulasaquarium_extinct = true
 				return {
 					message = localize('hmlt_extinct')
 				}
@@ -1061,13 +1080,14 @@ SMODS.Joker {
 	pos = { x = 3, y = 4 },
 	rarity = 'hmlt_player',
 	cost = 4,
-	config = { extra = { mult = 12, odds = 4.13 } },
-loc_vars = function(self, info_queue, card)
-return { vars = { card.ability.extra.mult, G.GAME.probabilities.normal, card.ability.extra.odds } }
+	config = { extra = { mult = 12 } },
+	loc_vars = function(self, info_queue, card)
+		local new_numerator, new_denominator = SMODS.get_probability_vars(card, 1, 4.13, 'hmlt_ascend_chance')
+		return { vars = { card.ability.extra.mult, new_numerator, new_denominator } }
 	end,
 	calculate = function(self, card, context)
 		if context.end_of_round and context.game_over == false and context.main_eval and not context.blueprint then
-			if pseudorandom('hmlt_cuttlefishculler') < G.GAME.probabilities.normal / card.ability.extra.odds then
+			if SMODS.pseudorandom_probability(card, 'hmlt_cuttlefishculler', 1, 4.13, 'hmlt_ascend_chance') then
 				G.E_MANAGER:add_event(Event({
 					func = function()
 						play_sound('slice1')
