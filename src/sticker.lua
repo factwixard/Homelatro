@@ -198,14 +198,12 @@ SMODS.Sticker {
 	atlas = 'hmltmisc',
 	pos = { x = 3, y = 0 },
 	badge_colour = HEX("20401F"),
-	config = { extra = { odds = 3 } },
 	loc_vars = function(self, info_queue, card)
-		return { vars = {
-			G.GAME.probabilities.normal,
-			self.config.extra.odds } }
+		local new_numerator, new_denominator = SMODS.get_probability_vars(card, 1, 3, 'hmlt_destroy_chance')
+		return { vars = { new_numerator, new_denominator } }
 	end,
 	calculate = function(self, card, context)
-		if context.destroy_card and context.cardarea == 'unscored' and context.destroy_card == card and pseudorandom('hmlt_do_st') < G.GAME.probabilities.normal / self.config.extra.odds then
+		if context.destroy_card and context.cardarea == 'unscored' and context.destroy_card == card and SMODS.pseudorandom_probability(card, 'hmlt_do_st', 1, 3, 'hmlt_destroy_chance') then
 			if not context.destroy_card.ability.hmlt_life_st then
 				return {
 					remove = true,
