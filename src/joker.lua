@@ -1109,7 +1109,6 @@ SMODS.Joker {
 	end
 	end,
 	yes_pool_flag = 'hmlt_ectobiologist_extinct'
-	end,
 }
 SMODS.Joker {
 	key = 'witchofspace',
