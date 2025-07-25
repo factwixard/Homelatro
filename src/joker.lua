@@ -44,9 +44,7 @@ SMODS.Joker {
 			}
 		end
 	end,
-	in_pool = function(self, args)
-		return not G.GAME.pool_flags.hmlt_ectobiologist_extinct
-	end
+	no_pool_flag = 'hmlt_ectobiologist_extinct'
 }
 SMODS.Joker {
 	key = 'gardengnostic',
@@ -109,9 +107,7 @@ SMODS.Joker {
 			}
 		end
 	end,
-	in_pool = function(self, args)
-		return not G.GAME.pool_flags.hmlt_gardengnostic_extinct
-	end
+	no_pool_flag = 'hmlt_gardengnostic_extinct'
 }
 SMODS.Joker {
 	key = 'tentacletherapist',
@@ -174,9 +170,7 @@ SMODS.Joker {
 			}
 		end
 	end,
-	in_pool = function(self, args)
-		return not G.GAME.pool_flags.hmlt_tentacletherapist_extinct
-	end
+	no_pool_flag = 'hmlt_tentacletherapist_extinct'
 }
 SMODS.Joker {
 	key = 'turntechgodhead',
@@ -224,9 +218,7 @@ SMODS.Joker {
 			}
 		end
 	end,
-	in_pool = function(self, args)
-		return not G.GAME.pool_flags.hmlt_turntechgodhead_extinct
-	end
+	no_pool_flag = 'hmlt_turntechgodhead_extinct'
 }
 SMODS.Joker {
 	key = 'gutsygumshoe',
@@ -275,9 +267,7 @@ SMODS.Joker {
 			}
 		end
 	end,
-	in_pool = function(self, args)
-		return not G.GAME.pool_flags.hmlt_gutsygumshoe_extinct
-	end
+	no_pool_flag = 'hmlt_gutsygumshoe_extinct'
 }
 SMODS.Joker {
 	key = 'golgothasterror',
@@ -325,9 +315,7 @@ SMODS.Joker {
 			}
 		end
 	end,
-	in_pool = function(self, args)
-		return not G.GAME.pool_flags.hmlt_golgothasterror_extinct
-	end
+	no_pool_flag = 'hmlt_golgothasterror_extinct'
 }
 SMODS.Joker {
 	key = 'tipsygnostalgic',
@@ -382,9 +370,7 @@ SMODS.Joker {
 			}
 		end
 	end,
-	in_pool = function(self, args)
-		return not G.GAME.pool_flags.hmlt_tipsygnostalgic_extinct
-	end
+	no_pool_flag = 'hmlt_tipsygnostalgic_extinct'
 }
 SMODS.Joker {
 	key = 'timaeustestified',
@@ -439,9 +425,7 @@ SMODS.Joker {
 		}
 		end
 	end,
-	in_pool = function(self, args)
-		return not G.GAME.pool_flags.hmlt_timaeustestified_extinct
-	end
+	no_pool_flag = 'hmlt_timaeustestified_extinct'
 }
 SMODS.Joker {
 	key = 'apocalypsearisen',
@@ -496,9 +480,7 @@ SMODS.Joker {
 		}
 		end
 	end,
-	in_pool = function(self, args)
-		return not G.GAME.pool_flags.hmlt_apocalypsearisen_extinct
-	end
+	no_pool_flag = 'hmlt_apocalypsearisen_extinct'
 }
 SMODS.Joker {
 	key = 'adiostoreador',
@@ -546,9 +528,7 @@ SMODS.Joker {
 		}
 	end
 	end,
-	in_pool = function(self, args)
-		return not G.GAME.pool_flags.hmlt_adiostoreador_extinct
-	end
+	no_pool_flag = 'hmlt_adiostoreador_extinct'
 }
 SMODS.Joker {
 	key = 'twinarmageddons',
@@ -602,9 +582,7 @@ SMODS.Joker {
 			}
 		end
 	end,
-	in_pool = function(self, args)
-		return not G.GAME.pool_flags.hmlt_twinarmageddons_extinct
-	end
+	no_pool_flag = 'hmlt_twinarmageddons_extinct'
 }
 SMODS.Joker {
 	key = 'carcinogeneticist',
@@ -661,9 +639,7 @@ SMODS.Joker {
 		}
 	end
 	end,
-	in_pool = function(self, args)
-		return not G.GAME.pool_flags.hmlt_carcinogeneticist_extinct
-	end
+	no_pool_flag = 'hmlt_carcinogeneticist_extinct'
 }
 SMODS.Joker {
 	key = 'arseniccatnip',
@@ -718,9 +694,7 @@ SMODS.Joker {
 		}
 	end
 	end,
-	in_pool = function(self, args)
-		return not G.GAME.pool_flags.hmlt_arseniccatnip_extinct
-	end
+	no_pool_flag = 'hmlt_arseniccatnip_extinct'
 }
 SMODS.Joker {
 	key = 'grimauxiliatrix',
@@ -768,9 +742,7 @@ SMODS.Joker {
 			}
 		end
 	end,
-	in_pool = function(self, args)
-		return not G.GAME.pool_flags.hmlt_grimauxiliatrix_extinct
-	end
+	no_pool_flag = 'hmlt_grimauxiliatrix_extinct'
 }
 SMODS.Joker {
 	key = 'gallowscalibrator',
@@ -832,9 +804,7 @@ SMODS.Joker {
 		}
 	end
 	end,
-	in_pool = function(self, args)
-		return not G.GAME.pool_flags.hmlt_gallowscalibrator_extinct
-	end
+	no_pool_flag = 'hmlt_gallowscalibrator_extinct'
 }
 SMODS.Joker {
 	key = 'arachnidsgrip',
@@ -896,9 +866,7 @@ SMODS.Joker {
 		}
 	end
 	end,
-	in_pool = function(self, args)
-		return not G.GAME.pool_flags.hmlt_arachnidsgrip_extinct
-	end
+	no_pool_flag = 'hmlt_arachnidsgrip_extinct'
 }
 SMODS.Joker {
 	key = 'centaurstesticle',
@@ -946,9 +914,7 @@ SMODS.Joker {
 			}
 		end
 	end,
-	in_pool = function(self, args)
-		return not G.GAME.pool_flags.hmlt_centaurstesticle_extinct
-	end
+	no_pool_flag = 'hmlt_centaurstesticle_extinct'
 }
 SMODS.Joker {
 	key = 'terminallycapricious',
@@ -1001,9 +967,7 @@ SMODS.Joker {
 			}
 		end
 	end,
-	in_pool = function(self, args)
-		return not G.GAME.pool_flags.hmlt_terminallycapricious_extinct
-	end
+	no_pool_flag = 'hmlt_terminallycapricious_extinct'
 }
 SMODS.Joker {
 	key = 'caligulasaquarium',
@@ -1069,9 +1033,7 @@ SMODS.Joker {
 		}
 		end
 	end,
-	in_pool = function(self, args)
-		return not G.GAME.pool_flags.hmlt_caligulasaquarium_extinct
-	end
+	no_pool_flag = 'hmlt_caligulasaquarium_extinct'
 }
 SMODS.Joker {
 	key = 'cuttlefishculler',
@@ -1126,9 +1088,7 @@ SMODS.Joker {
 		}
 		end
 	end,
-	in_pool = function(self, args)
-		return not G.GAME.pool_flags.hmlt_cuttlefishculler_extinct
-	end
+	no_pool_flag = 'hmlt_cuttlefishculler_extinct'
 }
 SMODS.Joker {
 	key = 'heirofbreath',
@@ -1148,8 +1108,7 @@ SMODS.Joker {
 		}
 	end
 	end,
-	in_pool = function(self, args)
-		return G.GAME.pool_flags.hmlt_ectobiologist_extinct
+	yes_pool_flag = 'hmlt_ectobiologist_extinct'
 	end,
 }
 SMODS.Joker {
@@ -1185,9 +1144,7 @@ SMODS.Joker {
 			}
 		end
 	end,
-	in_pool = function(self, args)
-		return G.GAME.pool_flags.hmlt_gardengnostic_extinct
-	end
+	yes_pool_flag = 'hmlt_gardengnostic_extinct'
 }
 SMODS.Joker {
 	key = 'seeroflight',
@@ -1222,9 +1179,7 @@ SMODS.Joker {
 			}
 		end
 	end,
-	in_pool = function(self, args)
-		return G.GAME.pool_flags.hmlt_tentacletherapist_extinct
-	end
+	yes_pool_flag = 'hmlt_tentacletherapist_extinct'
 }
 SMODS.Joker {
 	key = 'knightoftime',
@@ -1244,9 +1199,7 @@ SMODS.Joker {
 			}
 		end
 	end,
-	in_pool = function(self, args)
-		return G.GAME.pool_flags.hmlt_turntechgodhead_extinct
-	end
+	yes_pool_flag = 'hmlt_turntechgodhead_extinct'
 }
 SMODS.Joker {
 	key = 'maidoflife',
@@ -1267,9 +1220,7 @@ SMODS.Joker {
 			}
 		end
 	end,
-	in_pool = function(self, args)
-		return G.GAME.pool_flags.hmlt_gutsygumshoe_extinct
-	end
+	yes_pool_flag = 'hmlt_gutsygumshoe_extinct'
 }
 SMODS.Joker {
 	key = 'pageofhope',
@@ -1289,9 +1240,7 @@ SMODS.Joker {
 		}
 	end
 	end,
-	in_pool = function(self, args)
-		return G.GAME.pool_flags.hmlt_golgothasterror_extinct
-	end
+	yes_pool_flag = 'hmlt_golgothasterror_extinct'
 }
 SMODS.Joker {
 	key = 'rogueofvoid',
@@ -1318,9 +1267,7 @@ SMODS.Joker {
 			}
 		end
 	end,
-	in_pool = function(self, args)
-		return G.GAME.pool_flags.hmlt_tipsygnostalgic_extinct
-	end
+	yes_pool_flag = 'hmlt_tipsygnostalgic_extinct'
 }
 SMODS.Joker {
 	key = 'princeofheart',
@@ -1347,9 +1294,7 @@ SMODS.Joker {
 		}
 		end
 	end,
-	in_pool = function(self, args)
-		return G.GAME.pool_flags.hmlt_timaeustestified_extinct
-	end
+	yes_pool_flag = 'hmlt_timaeustestified_extinct'
 }
 SMODS.Joker {
 	key = 'maidoftime',
@@ -1376,9 +1321,7 @@ SMODS.Joker {
 		}
 		end
 	end,
-	in_pool = function(self, args)
-		return G.GAME.pool_flags.hmlt_apocalypsearisen_extinct
-	end
+	yes_pool_flag = 'hmlt_apocalypsearisen_extinct'
 }
 SMODS.Joker {
 	key = 'pageofbreath',
@@ -1398,9 +1341,7 @@ SMODS.Joker {
 			}
 		end
 	end,
-	in_pool = function(self, args)
-		return G.GAME.pool_flags.hmlt_adiostoreador_extinct
-	end
+	yes_pool_flag = 'hmlt_adiostoreador_extinct'
 }
 SMODS.Joker {
 	key = 'mageofdoom',
@@ -1426,9 +1367,7 @@ SMODS.Joker {
 			}
 		end
 	end,
-	in_pool = function(self, args)
-		return G.GAME.pool_flags.hmlt_twinarmageddons_extinct
-	end
+	yes_pool_flag = 'hmlt_twinarmageddons_extinct'
 }
 SMODS.Joker {
 	key = 'knightofblood',
@@ -1455,9 +1394,7 @@ SMODS.Joker {
 			}
 		end
 	end,
-	in_pool = function(self, args)
-		return G.GAME.pool_flags.hmlt_carcinogeneticist_extinct
-	end
+	yes_pool_flag = 'hmlt_carcinogeneticist_extinct'
 }
 SMODS.Joker {
 	key = 'rogueofheart',
@@ -1484,9 +1421,7 @@ SMODS.Joker {
 			}
 		end
 	end,
-	in_pool = function(self, args)
-		return G.GAME.pool_flags.hmlt_arseniccatnip_extinct
-	end
+	yes_pool_flag = 'hmlt_arseniccatnip_extinct'
 }
 SMODS.Joker {
 	key = 'sylphofspace',
@@ -1506,9 +1441,7 @@ SMODS.Joker {
 			}
 		end
 	end,
-	in_pool = function(self, args)
-		return G.GAME.pool_flags.hmlt_grimauxiliatrix_extinct
-	end
+	yes_pool_flag = 'hmlt_grimauxiliatrix_extinct'
 }
 SMODS.Joker {
 	key = 'seerofmind',
@@ -1542,9 +1475,7 @@ SMODS.Joker {
 		}
 	end
 	end,
-	in_pool = function(self, args)
-		return G.GAME.pool_flags.hmlt_gallowscalibrator_extinct
-	end
+	yes_pool_flag = 'hmlt_gallowscalibrator_extinct'
 }
 SMODS.Joker {
 	key = 'thiefoflight',
@@ -1578,9 +1509,7 @@ SMODS.Joker {
 		}
 	end
 	end,
-	in_pool = function(self, args)
-		return G.GAME.pool_flags.hmlt_arachnidsgrip_extinct
-	end
+	yes_pool_flag = 'hmlt_arachnidsgrip_extinct'
 }
 SMODS.Joker {
 	key = 'heirofvoid',
@@ -1600,9 +1529,7 @@ SMODS.Joker {
 			}
 		end
 	end,
-	in_pool = function(self, args)
-		return G.GAME.pool_flags.hmlt_centaurstesticle_extinct
-	end
+	yes_pool_flag = 'hmlt_centaurstesticle_extinct'
 }
 SMODS.Joker {
 	key = 'bardofrage',
@@ -1627,9 +1554,7 @@ SMODS.Joker {
 			}
 		end
 	end,
-	in_pool = function(self, args)
-		return G.GAME.pool_flags.hmlt_terminallycapricious_extinct
-	end
+	yes_pool_flag = 'hmlt_terminallycapricious_extinct'
 }
 SMODS.Joker {
 	key = 'princeofhope',
@@ -1667,9 +1592,7 @@ SMODS.Joker {
 		}
 		end
 	end,
-	in_pool = function(self, args)
-		return G.GAME.pool_flags.hmlt_caligulasaquarium_extinct
-	end
+	yes_pool_flag = 'hmlt_caligulasaquarium_extinct'
 }
 SMODS.Joker {
 	key = 'witchoflife',
@@ -1696,9 +1619,7 @@ SMODS.Joker {
 		}
 		end
 	end,
-	in_pool = function(self, args)
-		return G.GAME.pool_flags.hmlt_cuttlefishculler_extinct
-	end
+	yes_pool_flag = 'hmlt_cuttlefishculler_extinct'
 }
 SMODS.Joker {
 	key = 'breath',
@@ -1774,7 +1695,7 @@ SMODS.Joker {
 				front = pseudorandom_element(G.P_CARDS, pseudoseed('hmlt_space')),
 				center = G.P_CENTERS.c_base
 			}, G.discard, true, nil, {G.C.SECONDARY_SET.Enhanced}, true)
-			_card:set_edition(poll_edition("hmlt_space", nil, nil, true))
+			_card:set_edition(poll_edition("hmlt_space", nil, true, true))
 			return {
 				func = function()
 					G.E_MANAGER:add_event(Event({
