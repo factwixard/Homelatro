@@ -1,6 +1,6 @@
 SMODS.Rarity {
 	key = 'player',
-	default_weight = 0.7,
+	default_weight = 0.35,
 	badge_colour = HEX("53A3FF"),
 	pools =  { ["Joker"] = true },
 	get_weight = function(self, weight, object_type)
