@@ -361,7 +361,7 @@ SMODS.Joker {
 					}
 				end
 		end
-		if context.post_trigger and (context.other_ret.jokers.chips or context.other_ret.jokers.h_chips or context.other_ret.jokers.chip_mod) and context.other_card ~= card then
+		if context.post_trigger and context.other_ret.jokers and (context.other_ret.jokers.chips or context.other_ret.jokers.h_chips or context.other_ret.jokers.chip_mod) and context.other_card ~= card then
 			card.ability.extra.chips = card.ability.extra.chips + card.ability.extra.chips_gain
 			return {
 				message = localize('hmlt_steal'),
@@ -685,7 +685,7 @@ SMODS.Joker {
 				}
 			end
 		end
-	if context.post_trigger and (context.other_ret.jokers.mult or context.other_ret.jokers.h_mult or context.other_ret.jokers.mult_mod) and context.other_card ~= card then
+	if context.post_trigger and context.other_ret.jokers and (context.other_ret.jokers.mult or context.other_ret.jokers.h_mult or context.other_ret.jokers.mult_mod) and context.other_card ~= card then
 		card.ability.extra.mult = card.ability.extra.mult + card.ability.extra.mult_gain
 		return {
 			message = localize('hmlt_steal'),
@@ -1261,7 +1261,7 @@ SMODS.Joker {
 		return { vars = { card.ability.extra.Xchips_gain, card.ability.extra.Xchips } }
 	end,
 	calculate = function(self, card, context)
-		if context.post_trigger and (context.other_ret.jokers.xchips or context.other_ret.jokers.x_chips or context.other_ret.jokers.Xchip_mod) and context.other_card ~= card then
+		if context.post_trigger and context.other_ret.jokers and (context.other_ret.jokers.xchips or context.other_ret.jokers.x_chips or context.other_ret.jokers.Xchip_mod) and context.other_card ~= card then
 			card.ability.extra.Xchips = card.ability.extra.Xchips + card.ability.extra.Xchips_gain
 			return {
 				message = localize('hmlt_steal'),
@@ -1415,7 +1415,7 @@ SMODS.Joker {
 		return { vars = { card.ability.extra.Xmult_gain, card.ability.extra.Xmult } }
 	end,
 	calculate = function(self, card, context)
-		if context.post_trigger and (context.other_ret.jokers.xmult or context.other_ret.jokers.x_mult or context.other_ret.jokers.Xmult_mod) and context.other_card ~= card then
+		if context.post_trigger and context.other_ret.jokers and (context.other_ret.jokers.xmult or context.other_ret.jokers.x_mult or context.other_ret.jokers.Xmult_mod) and context.other_card ~= card then
 			card.ability.extra.Xmult = card.ability.extra.Xmult + card.ability.extra.Xmult_gain
 			return {
 				message = localize('hmlt_steal'),
