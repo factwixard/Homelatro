@@ -1183,6 +1183,7 @@ SMODS.Joker {
 			return {
 				xchips = card.ability.extra.Xchips
 			}
+			end
 		end
 	end,
 	yes_pool_flag = 'hmlt_tentacletherapist_extinct'
