@@ -86,25 +86,27 @@ SMODS.Joker {
 			}
 		end
 	end
-	local suits = 0
-		for k, v in pairs(G.play.cards) do
-			if v:is_suit("Hearts") then
-				suits = suits + 1
+	if context.joker_main then
+		local hearts, diamonds, spades, clubs = false, false, false, false
+			for k, v in pairs(G.play.cards) do
+				if v:is_suit("Hearts") then
+					hearts = true
+				end
+				if v:is_suit("Diamonds") then
+					diamonds = true
+				end
+				if v:is_suit("Clubs") then
+					clubs = true
+				end
+				if v:is_suit("Spades") then
+					spades = true
+				end
 			end
-			if v:is_suit("Diamonds") then
-				suits = suits + 1
+			if (hearts and 1 or 0) + (diamonds and 1 or 0) + (clubs and 1 or 0) + (spades and 1 or 0) >=3 then
+				return {
+				chips = card.ability.extra.chips
+				}
 			end
-			if v:is_suit("Clubs") then
-				suits = suits + 1
-			end
-			if v:is_suit("Spades") then
-				suits = suits + 1
-			end
-		end
-		if context.joker_main and suits >=3 then
-			return {
-			chips = card.ability.extra.chips
-			}
 		end
 	end,
 	no_pool_flag = 'hmlt_gardengnostic_extinct'
@@ -149,25 +151,27 @@ SMODS.Joker {
 			}
 		end
 	end
-	local suits = 0
-		for k, v in pairs(G.play.cards) do
-			if v:is_suit("Hearts") then
-				suits = suits + 1
+	if context.joker_main then
+		local hearts, diamonds, spades, clubs = false, false, false, false
+			for k, v in pairs(G.play.cards) do
+				if v:is_suit("Hearts") then
+					hearts = true
+				end
+				if v:is_suit("Diamonds") then
+					diamonds = true
+				end
+				if v:is_suit("Clubs") then
+					clubs = true
+				end
+				if v:is_suit("Spades") then
+					spades = true
+				end
 			end
-			if v:is_suit("Diamonds") then
-				suits = suits + 1
+			if (hearts and 1 or 0) + (diamonds and 1 or 0) + (clubs and 1 or 0) + (spades and 1 or 0) <=2 then
+				return {
+					chips = card.ability.extra.chips
+				}
 			end
-			if v:is_suit("Clubs") then
-				suits = suits + 1
-			end
-			if v:is_suit("Spades") then
-				suits = suits + 1
-			end
-		end
-		if context.joker_main and suits <=2 then
-			return {
-				chips = card.ability.extra.chips
-			}
 		end
 	end,
 	no_pool_flag = 'hmlt_tentacletherapist_extinct'
@@ -1122,25 +1126,27 @@ SMODS.Joker {
 		return { vars = { card.ability.extra.Xchips, card.ability.extra.suits } }
 	end,
 	calculate = function(self, card, context)
-		local suits = 0
+		if context.joker_main then
+			local hearts, diamonds, spades, clubs = false, false, false, false
 			for k, v in pairs(G.play.cards) do
 				if v:is_suit("Hearts") then
-					suits = suits + 1
+					hearts = true
 				end
 				if v:is_suit("Diamonds") then
-					suits = suits + 1
+					diamonds = true
 				end
 				if v:is_suit("Clubs") then
-					suits = suits + 1
+					clubs = true
 				end
 				if v:is_suit("Spades") then
-					suits = suits + 1
+					spades = true
 				end
 			end
-		if context.joker_main and suits >=3 then
-			return {
-				xchips = card.ability.extra.Xchips
-			}
+			if (hearts and 1 or 0) + (diamonds and 1 or 0) + (clubs and 1 or 0) + (spades and 1 or 0) >=3 then
+				return {
+					xchips = card.ability.extra.Xchips
+				}
+			end
 		end
 	end,
 	yes_pool_flag = 'hmlt_gardengnostic_extinct'
@@ -1157,22 +1163,23 @@ SMODS.Joker {
 		return { vars = { card.ability.extra.Xchips, card.ability.extra.suits } }
 	end,
 	calculate = function(self, card, context)
-		local suits = 0
+		if context.joker_main then
+		local hearts, diamonds, spades, clubs = false, false, false, false
 			for k, v in pairs(G.play.cards) do
 				if v:is_suit("Hearts") then
-					suits = suits + 1
+					hearts = true
 				end
 				if v:is_suit("Diamonds") then
-					suits = suits + 1
+					diamonds = true
 				end
 				if v:is_suit("Clubs") then
-					suits = suits + 1
+					clubs = true
 				end
 				if v:is_suit("Spades") then
-					suits = suits + 1
+					spades = true
 				end
 			end
-		if context.joker_main and suits <=2 then
+			if (hearts and 1 or 0) + (diamonds and 1 or 0) + (clubs and 1 or 0) + (spades and 1 or 0) <=2 then
 			return {
 				xchips = card.ability.extra.Xchips
 			}
