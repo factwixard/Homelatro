@@ -1752,6 +1752,11 @@ SMODS.Joker {
 	pos = { x = 5, y = 5 },
 	rarity = 'hmlt_aspect',
 	cost = 6,
+	calculate = function(self, card, context)
+		if context.mod_probability and context.identifier == 'wheel_of_fortune' and not context.blueprint then
+			return { numerator = context.numerator * 2 }
+		end
+	end
 }
 SMODS.Joker {
 	key = 'heart',
