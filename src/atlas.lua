@@ -41,3 +41,9 @@ SMODS.Atlas({
 	px = 71,
 	py = 95,
 })
+SMODS.Atlas({
+	key = 'hmltcollect',
+	path = 'hmltcollectable.png',
+	px = 71,
+	py = 95,
+})
