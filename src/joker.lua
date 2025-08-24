@@ -755,10 +755,11 @@ SMODS.Joker {
 	pos = { x = 2, y = 3 },
 	rarity = 'hmlt_player',
 	cost = 4,
-	config = { extra = { mult_gain = 12, mult = 0 } },
+	config = { extra = { mult = 5, held_mult = 2 } },
 	loc_vars = function(self, info_queue, card)
+		info_queue[#info_queue + 1] = G.P_CENTERS['m_hmlt_blank']
 		local new_numerator, new_denominator = SMODS.get_probability_vars(card, 1, 4.13, 'hmlt_ascend_chance')
-		return { vars = { card.ability.extra.mult_gain, card.ability.extra.mult, new_numerator, new_denominator } }
+		return { vars = { card.ability.extra.mult, card.ability.extra.held_mult, new_numerator, new_denominator } }
 	end,
 	calculate = function(self, card, context)
 		if context.end_of_round and context.game_over == false and context.main_eval and not context.blueprint then
@@ -788,25 +789,17 @@ SMODS.Joker {
 				}
 			end
 		end
-	if context.hand_drawn then
-		local face_down = 0
-			for k, v in pairs(context.hand_drawn) do
-				if v.facing == "back" then
-					face_down = face_down + 1
-				end
+		if context.individual and SMODS.has_enhancement(context.other_card, 'm_hmlt_blank') and not context.end_of_round then
+			if context.cardarea == G.play then
+				return {
+					mult = card.ability.extra.mult
+				}
+			elseif context.cardarea == G.hand then
+				return {
+					mult = card.ability.extra.held_mult
+				}
 			end
-	card.ability.extra.mult = card.ability.extra.mult + (card.ability.extra.mult_gain * face_down)
-		if face_down >=1 then
-			return {
-				message = localize('hmlt_upgrade')
-			}
 		end
-	end
-	if context.joker_main then
-		return {
-			mult = card.ability.extra.mult
-		}
-	end
 	end,
 	no_pool_flag = 'hmlt_gallowscalibrator_extinct'
 }
@@ -850,25 +843,17 @@ SMODS.Joker {
 				}
 			end
 		end
-	if context.before then
-	local chance_card = 0
-		for k, v in pairs(context.scoring_hand) do
-			if SMODS.has_enhancement(v, 'm_glass') or SMODS.has_enhancement(v, 'm_lucky') then
-				chance_card = chance_card + 1
-			end
-		end
-		if chance_card >= 1 then
-			card.ability.extra.mult = card.ability.extra.mult + (card.ability.extra.mult_gain * chance_card)
+		if context.pseudorandom_result and not context.result then
+			card.ability.extra.mult = card.ability.extra.mult + card.ability.extra.mult_gain
 			return {
 				message = localize('hmlt_upgrade')
 			}
 		end
-	end
-	if context.joker_main then
-		return {
-			mult = card.ability.extra.mult
-		}
-	end
+		if context.joker_main then
+			return {
+				mult = card.ability.extra.mult
+			}
+		end
 	end,
 	no_pool_flag = 'hmlt_arachnidsgrip_extinct'
 }
@@ -1457,30 +1442,23 @@ SMODS.Joker {
 	pos = { x = 6, y = 3 },
 	rarity = 'hmlt_godtier',
 	cost = 8,
-	config = { extra = { Xmult_gain = 0.6, Xmult = 1 } },
+	config = { extra = { Xmult = 1.25, held_Xmult = 1.1 } },
 	loc_vars = function(self, info_queue, card)
-		return { vars = { card.ability.extra.Xmult_gain, card.ability.extra.Xmult } }
+		info_queue[#info_queue + 1] = G.P_CENTERS['m_hmlt_blank']
+		return { vars = { card.ability.extra.Xmult, card.ability.extra.held_Xmult } }
 	end,
 	calculate = function(self, card, context)
-	if context.hand_drawn then
-		local face_down = 0
-			for k, v in pairs(context.hand_drawn) do
-				if v.facing == "back" then
-					face_down = face_down + 1
-				end
+		if context.individual and SMODS.has_enhancement(context.other_card, 'm_hmlt_blank') and not context.end_of_round then
+			if context.cardarea == G.play then
+				return {
+					xmult = card.ability.extra.Xmult
+				}
+			elseif context.cardarea == G.hand then
+				return {
+					xmult = card.ability.extra.held_Xmult
+				}
 			end
-		card.ability.extra.Xmult = card.ability.extra.Xmult + (card.ability.extra.Xmult_gain * face_down)
-		if face_down >=1 then
-			return {
-				message = localize('hmlt_upgrade')
-			}
 		end
-	end
-	if context.joker_main then
-		return {
-			xmult = card.ability.extra.Xmult
-		}
-	end
 	end,
 	yes_pool_flag = 'hmlt_gallowscalibrator_extinct'
 }
@@ -1496,25 +1474,17 @@ SMODS.Joker {
 		return { vars = { card.ability.extra.Xmult_gain, card.ability.extra.Xmult } }
 	end,
 	calculate = function(self, card, context)
-	if context.before then
-	local chance_card = 0
-		for k, v in ipairs(context.scoring_hand) do
-			if SMODS.has_enhancement(v, 'm_glass') or SMODS.has_enhancement(v, 'm_lucky') then
-				chance_card = chance_card + 1
-			end
-		end
-		if chance_card >= 1 then
-			card.ability.extra.Xmult = card.ability.extra.Xmult + (card.ability.extra.Xmult_gain * chance_card)
+		if context.pseudorandom_result and not context.result then
+			card.ability.extra.Xmult = card.ability.extra.Xmult + card.ability.extra.Xmult_gain
 			return {
 				message = localize('hmlt_upgrade')
 			}
 		end
-	end
-	if context.joker_main then
-		return {
-			xmult = card.ability.extra.Xmult
-		}
-	end
+		if context.joker_main then
+			return {
+				xmult = card.ability.extra.Xmult
+			}
+		end
 	end,
 	yes_pool_flag = 'hmlt_arachnidsgrip_extinct'
 }
