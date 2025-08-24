@@ -270,9 +270,8 @@
 				name = 'gallowsCalibrator',
 				text = {
 					{
-						'Gains {C:mult}+#1#{} Mult every time a {C:attention}card{}',
-						'is drawn {C:attention}face-down{}',
-						'{C:inactive}(Currently {C:mult}+#2# {C:inactive}Mult){}',
+						'Scored {C:enhanced}Blank{} cards give {C:mult}+#1#{} Mult',
+						'Held {C:enhanced}Blank{} cards give {C:mult}+#2#{} Mult',
 					},
 					{
 						'{C:green}#3# in #4# chance{} of being destroyed',
@@ -284,8 +283,8 @@
 				name = 'arachnidsGrip',
 				text = {
 					{
-						'Gains {C:mult}+#1#{} Mult for every {C:attention}scored card{}',
-						'that has a listed {C:green}chance{}',
+						'Gains {C:mult}+#1#{} Mult any time',
+						'a {C:green}probability{} {C:attention}fails{}',
 						'{C:inactive}(Currently {C:mult}+#2# {C:inactive}Mult)',
 					},
 					{
@@ -449,16 +448,15 @@
 			j_hmlt_seerofmind = {
 				name = 'Seer of Mind',
 				text = {
-					'Gains {X:mult,C:white}X#1#{} Mult each time a {C:attention}card{}',
-					'is drawn {C:attention}face-down{}',
-					'{C:inactive}(Currently {X:mult,C:white}X#2#{} {C:inactive}Mult){}',
+					'Scored {C:enhanced}Blank{} cards give {X:mult,C:white}X#1#{} Mult',
+					'Held {C:enhanced}Blank{} cards give {X:mult,C:white}X#2#{} Mult',
 				},
 			},
 			j_hmlt_thiefoflight = {
 				name = 'Thief of Light',
 				text = {
-					'Gains {X:mult,C:white}X#1#{} Mult for every {C:attention}scored card{}',
-					'that has a listed {C:green}chance{}',
+					'Gains {X:mult,C:white}X#1#{} Mult any time',
+					'a {C:green}probability{} {C:attention}fails{}',
 					'{C:inactive}(Currently {X:mult,C:white}X#2#{} {C:inactive}Mult){}',
 				},
 			},
