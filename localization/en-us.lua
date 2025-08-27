@@ -592,8 +592,8 @@
 			hmlt_br_st = {
 				name = 'Breath',
 				text = {
-					'{C:attention}+#1#{} card selection limit',
-					'when card {C:attention}held{} in hand',
+					'{X:mult,C:white}X#1#{} Mult',
+					'when card is in {C:attention}deck{}',
 				},
 			},
 			hmlt_ti_st = {
@@ -607,7 +607,8 @@
 			hmlt_li_st = {
 				name = 'Light',
 				text = {
-					'Card cannot be drawn {C:attention}face down{}',
+					'Card is always drawn when',
+					'{C:attention}Booster Pack{} is opened'
 				},
 			},
 			hmlt_sp_st = {
@@ -632,8 +633,8 @@
 			hmlt_vo_st = {
 				name = 'Void',
 				text = {
-					'{C:attention}+#1#{} hand size',
-					'when card {C:attention}held{} in hand',
+					'{X:chips,C:white}X#1#{} Chips {C:attention}twice{}',
+					'when card is {C:attention}unscoring{}',
 				},
 			},
 			hmlt_he_st = {
