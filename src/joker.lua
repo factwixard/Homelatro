@@ -1469,7 +1469,7 @@ SMODS.Joker {
 	pos = { x = 7, y = 3 },
 	rarity = 'hmlt_godtier',
 	cost = 8,
-	config = { extra = { Xmult_gain = 0.4, Xmult = 1 } },
+	config = { extra = { Xmult_gain = 0.2, Xmult = 1 } },
 	loc_vars = function(self, info_queue, card)
 		return { vars = { card.ability.extra.Xmult_gain, card.ability.extra.Xmult } }
 	end,
