@@ -655,8 +655,8 @@
 				name = 'Mind',
 				text = {
 					'When card is {C:attention}scored{},',
-					'all {C:attention}scoring cards{} are {C:attention}retriggered{}',
-					'{C:inactive}(Does not retrigger other',
+					'all {C:attention}scoring cards{} are {C:attention}rescored{}',
+					'{C:inactive}(Does not rescore other',
 					'{C:inactive}cards with {C:attention}Mind{} {C:inactive}Stickers)',
 				},
 			},
