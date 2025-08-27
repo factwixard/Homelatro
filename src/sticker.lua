@@ -2,36 +2,16 @@ SMODS.Sticker {
 	key = 'br_st',
 	atlas = 'hmltmisc',
 	pos = { x = 1, y = 1 },
-	config = { extra = { limit = 1 } },
+	config = { extra = { xmult = 1.25 } },
 	loc_vars = function(self, info_queue, card)
-		return { vars = { self.config.extra.limit } }
+		return { vars = { self.config.extra.xmult } }
 	end,
 	badge_colour = HEX("0086EB"),
-	apply = function(self, card, val)
-		if G.STAGE == G.STAGES.RUN then
-			if card.area == G.hand and G.GAME.blind.in_blind and not card.ability.hmlt_br_st then
-				SMODS.change_play_limit(self.config.extra.limit)
-				SMODS.change_discard_limit(self.config.extra.limit)
-			end
-		end
-		card.ability['hmlt_br_st'] = true
-	end,
 	calculate = function(self, card, context)
-		if context.hand_drawn then
-			for k, v in pairs(context.hand_drawn) do
-				if v == card then
-					SMODS.change_play_limit(self.config.extra.limit)
-					SMODS.change_discard_limit(self.config.extra.limit)
-				end
-			end
-		end
-		if context.before or context.pre_discard then
-			for k, v in pairs((context.before or context.pre_discard) and context.full_hand or {}) do
-				if v == card then
-					SMODS.change_play_limit(-self.config.extra.limit)
-					SMODS.change_discard_limit(-self.config.extra.limit)
-				end
-			end
+		if context.main_scoring and context.cardarea == G.deck then
+			return {
+				xmult = self.config.extra.xmult
+			}
 		end
 	end
 }
@@ -59,8 +39,8 @@ SMODS.Sticker {
 	pos = { x = 4, y = 0 },
 	badge_colour = HEX("F98100"),
 	calculate = function(self, card, context)
-		if context.stay_flipped and context.to_area == G.hand and context.other_card == card then
-			return { prevent_stay_flipped = true }
+		if context.open_booster then
+			draw_card(G.deck, G.hand, nil, nil, nil, card)
 		end
 	end
 }
@@ -100,32 +80,16 @@ SMODS.Sticker {
 	atlas = 'hmltmisc',
 	pos = { x = 0, y = 1 },
 	badge_colour = HEX("033476"),
-	config = { extra = { hand = 1 } },
+	config = { extra = { xchips = 1.5 } },
 	loc_vars = function(self, info_queue, card)
-		return { vars = { self.config.extra.hand } }
-	end,
-	apply = function(self, card, val)
-		if G.STAGE == G.STAGES.RUN then
-			if card.area == G.hand and G.GAME.blind.in_blind and not card.ability.hmlt_vo_st then
-				G.hand:change_size(self.config.extra.hand)
-			end
-		end
-		card.ability['hmlt_vo_st'] = true
+		return { vars = { self.config.extra.xchips } }
 	end,
 	calculate = function(self, card, context)
-		if context.hand_drawn then
-			for k, v in pairs(context.hand_drawn) do
-				if v == card then
-					G.hand:change_size(self.config.extra.hand)
-				end
-			end
-		end
-		if context.before or context.pre_discard then
-			for k, v in pairs((context.before or context.pre_discard) and context.full_hand or {}) do
-				if v == card then
-					G.hand:change_size(-self.config.extra.hand)
-				end
-			end
+		if context.cardarea == 'unscored' and context.main_scoring then
+			return {
+				xchips = self.config.extra.xchips,
+				extra = { xchips = self.config.extra.xchips}
+			}
 		end
 	end
 }
